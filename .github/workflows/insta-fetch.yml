@@ -19,8 +19,9 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Restore Instagram session file
+      - name: Restore session
         run: |
+          mkdir -p ~/.config/instaloader
           echo "$INSTALOADER_SESSION_B64" | base64 --decode > ~/.config/instaloader/session-bamba_bot
         env:
           INSTALOADER_SESSION_B64: ${{ secrets.INSTALOADER_SESSION_B64 }}
