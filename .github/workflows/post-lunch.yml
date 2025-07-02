@@ -15,7 +15,9 @@ jobs:
         id: menu
         run: |
           FORMATTED=$(jq -r '."ICA Supermarket Hansa".formatted' menu.json)
-          echo "FORMATTED=$FORMATTED" >> $GITHUB_OUTPUT
+          echo "FORMATTED<<EOF" >> $GITHUB_OUTPUT
+          echo "$FORMATTED" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Post message to Slack
         env:
