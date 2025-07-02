@@ -32,7 +32,7 @@ jobs:
         run: python insta.py
 
       - name: Upload latest_post.json artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: latest-instagram-post
           path: latest_post.json
