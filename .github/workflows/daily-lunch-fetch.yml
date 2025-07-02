@@ -1,0 +1,54 @@
+name: Daily Lunch Menu Fetch
+
+on:
+  schedule:
+    # Runs daily at 11:10 Swedish time (CET/CEST)
+    # Swedish time is UTC+1 (winter) or UTC+2 (summer)
+    # Using 09:10 UTC to approximate Swedish time
+    - cron: '10 9 * * *'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  fetch-lunch:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install selenium openai beautifulsoup4 requests
+          
+      - name: Install Chrome and ChromeDriver
+        run: |
+          # Install Chrome
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+          
+          # Install ChromeDriver
+          CHROME_VERSION=$(google-chrome --version | cut -d " " -f3 | cut -d "." -f1)
+          wget -O /tmp/chromedriver.zip "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_${CHROME_VERSION}/chromedriver_linux64.zip"
+          sudo unzip /tmp/chromedriver.zip -d /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+          
+      - name: Run lunch menu scraper
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+        run: python fb.py
+        
+      - name: Commit and push menu updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add menu.json
+          git diff --staged --quiet || git commit -m "🍽️ Update daily lunch menu - $(date '+%Y-%m-%d %H:%M')"
+          git push 
