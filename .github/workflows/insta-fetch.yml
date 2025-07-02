@@ -1,0 +1,38 @@
+name: Fetch Instagram Latest Post
+
+on:
+  schedule:
+    # Runs every day at 11:10 AM Europe/Stockholm time (Swedish time)
+    - cron: '10 9 * * *'  # UTC time: 09:10 (Swedish time is UTC+1 or UTC+2 with DST)
+  workflow_dispatch:  # manual trigger
+
+jobs:
+  fetch-instagram:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Restore Instagram session file
+        run: |
+          echo "$INSTALOADER_SESSION_B64" | base64 --decode > ~/.config/instaloader/session-bamba_bot
+        env:
+          INSTALOADER_SESSION_B64: ${{ secrets.INSTALOADER_SESSION_B64 }}
+
+      - name: Install dependencies
+        run: pip install instaloader
+
+      - name: Run insta.py to fetch latest post
+        run: python insta.py
+
+      - name: Upload latest_post.json artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: latest-instagram-post
+          path: latest_post.json
