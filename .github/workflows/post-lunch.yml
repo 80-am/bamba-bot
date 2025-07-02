@@ -1,0 +1,29 @@
+name: Post ICA Hansa Lunch with Slack Bot
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 9 * * 1-5'  # At 09:15 UTC Mon-Fri → 11:15 Swedish time Mon-Fri
+
+jobs:
+  post-lunch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read lunch menu
+        id: menu
+        run: |
+          FORMATTED=$(jq -r '."ICA Supermarket Hansa".formatted' menu.json)
+          echo "FORMATTED=$FORMATTED" >> $GITHUB_OUTPUT
+
+      - name: Post message to Slack
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          MESSAGE: "🍽️ *Dagens lunch på ICA Supermarket Hansa:*\n${{ steps.menu.outputs.FORMATTED }}"
+        run: |
+          curl -X POST https://slack.com/api/chat.postMessage \
+            -H "Authorization: Bearer $SLACK_BOT_TOKEN" \
+            -H "Content-type: application/json" \
+            -d "{\"channel\":\"$CHANNEL_ID\",\"text\":\"$MESSAGE\"}"
