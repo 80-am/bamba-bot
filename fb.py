@@ -107,27 +107,30 @@ def scrape_facebook_page(page_name, url):
         # Split into lines and look for lunch-related content
         lines = page_text.split('\n')
         
+        # Debug: print all lines fetched from the page
+        print("\n--- All lines fetched from Facebook page ---")
+        for i, line in enumerate(lines):
+            print(f"{i}: {line}")
+        print("--- End of lines ---\n")
+        
         # Look for lunch content - collect all relevant lines
         lunch_candidates = []
         
+        # Broadened keyword search
+        keywords = ["lunch", "lunchdags", "dagens", "idag", "serverar", "meny", "rätt"]
         for i, line in enumerate(lines):
             line = line.strip()
             if not line or len(line) < 20:
                 continue
-                
-            # Simple search for lunch content
-            if "lunch" in line.lower():
+            if any(word in line.lower() for word in keywords):
                 # Get context around the lunch mention
                 start = max(0, i-1)
                 end = min(len(lines), i+6)
-                
                 context_lines = []
                 for j in range(start, end):
                     context_line = lines[j].strip()
                     if context_line and len(context_line) > 10:
                         context_lines.append(context_line)
-                
-                # Join the relevant content
                 content = " ".join(context_lines)
                 if len(content) > 50:
                     lunch_candidates.append(content)
@@ -136,7 +139,6 @@ def scrape_facebook_page(page_name, url):
         if lunch_candidates:
             best_content = max(lunch_candidates, key=len)
             cleaned_content = clean_menu_text(best_content)
-            
             print(f"✅ Found lunch content for {page_name}")
             return cleaned_content
         else:
