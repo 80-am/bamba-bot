@@ -4,8 +4,8 @@ on:
   schedule:
     # Runs daily at 11:10 Swedish time (CET/CEST)
     # Swedish time is UTC+1 (winter) or UTC+2 (summer)
-    # Using 09:10 UTC to approximate Swedish time
-    - cron: '10 9 * * *'
+    # Using 09:00 UTC to approximate Swedish time
+    - cron: '0 9 * * *'
   workflow_dispatch:  # Allow manual trigger
 
 jobs:
