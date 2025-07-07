@@ -23,7 +23,6 @@ def format_menu_with_openai(raw_menu_text):
         - Extract only the actual food items/dishes
         - Add appropriate food emojis before each item
         - Keep Swedish names but make them readable
-        - If there are quantity limitations, add "(begränsad mängd!)" 
         - One dish per line
         - Remove any extra text like greetings, store info, etc.
 
