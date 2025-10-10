@@ -1,6 +1,10 @@
 {
+  "ICA Supermarket Hansa": {
+    "raw": "| SÅ v.4l 4, MV > (fä ÖNVECKANS LUNCH: MÅNDAG I Kåldolmar med kokt potatis, gräddsås och lingonsylt. TISDAG 3 Oklassisk fiskgratäng med potatismos. I ONSDAG Currykyckling med ris. TORSDAG I Raggmunk med stekt fläsk och lingonsylt. FREDAG Pulled porkburgare med rostad potatis. I 1 NS 15,90:-/hg [ || i Med reservation för ändringar. i 1",
+    "formatted": "🍔 Pulled porkburgare med rostad potatis"
+  },
   "La Gare Malmö": {
     "raw": "Wallenbergare/beurre noisette/petits pois/airelles rouges\nWallenbergare/brynt smör/ärtor/lingon\nVegetarisk: Pasta/tomate/ail/persil/parmesan",
-    "formatted": "🍔 Wallenbergare med beurre noisette, petits pois och airelles rouges\n🍔 Wallenbergare med brynt smör, ärtor och lingon\n🍝 Vegetarisk pasta med tomater, vitlök, persilja och parmesan"
+    "formatted": "🍔 Wallenbergare med beurre noisette, petits pois och airelles rouges\n🍔 Wallenbergare med brynt smör, ärtor och lingon\n🌱 Vegetarisk: Pasta med tomater, vitlök, persilja och parmesan"
   }
 }
