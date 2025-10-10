@@ -9,6 +9,7 @@ import openai
 import os
 import pytesseract
 from PIL import Image
+import instaloader
 import requests
 from io import BytesIO
 
@@ -168,6 +169,79 @@ def extract_text_from_images(driver):
         
     except Exception as e:
         print(f"❌ OCR extraction failed: {e}")
+        return None
+
+def _ocr_image_bytes(image_bytes: bytes) -> str:
+    """Run OCR on raw image bytes using Tesseract Swedish language, trying multiple configs."""
+    try:
+        image = Image.open(BytesIO(image_bytes)).convert('RGB')
+        # Upscale small images to help OCR
+        if image.width < 300 or image.height < 300:
+            image = image.resize((image.width * 2, image.height * 2))
+
+        configs = ['--psm 6', '--psm 4', '--psm 3']
+        best_text = ""
+        for config in configs:
+            try:
+                text = pytesseract.image_to_string(image, lang='swe', config=config)
+                if len(text.strip()) > len(best_text.strip()):
+                    best_text = text
+            except Exception:
+                continue
+        return best_text.strip()
+    except Exception as e:
+        print(f"❌ OCR bytes processing failed: {e}")
+        return ""
+
+def scrape_ica_instaloader(username: str = "ica_supermarket_hansa", max_posts: int = 10):
+    """Fetch recent Instagram posts via Instaloader (no login) and OCR for weekly menu text."""
+    try:
+        print(f"Loading ICA via Instaloader: https://www.instagram.com/{username}/ ...")
+        loader = instaloader.Instaloader(download_pictures=False,
+                                         download_videos=False,
+                                         download_video_thumbnails=False,
+                                         save_metadata=False,
+                                         compress_json=False,
+                                         quiet=True)
+
+        # Optional login to reduce rate limiting and increase reliability
+        ig_user = os.getenv("INSTAGRAM_USERNAME")
+        ig_pass = os.getenv("INSTAGRAM_PASSWORD")
+        if ig_user and ig_pass:
+            try:
+                print("Attempting Instagram login via Instaloader...")
+                loader.login(ig_user, ig_pass)
+                print("✅ Instagram login successful")
+            except Exception as e:
+                print(f"⚠️ Instagram login failed, continuing without login: {e}")
+
+        profile = instaloader.Profile.from_username(loader.context, username)
+        count_checked = 0
+        for post in profile.get_posts():
+            if count_checked >= max_posts:
+                break
+            count_checked += 1
+            try:
+                url = post.url  # direct image URL
+                print(f"Processing IG post {count_checked}: {url[:80]}...")
+                resp = requests.get(url, timeout=15)
+                if resp.status_code != 200:
+                    continue
+                text = _ocr_image_bytes(resp.content)
+                print(f"OCR result {count_checked}: {text[:120]}...")
+                if len(text) > 30 and any(word in text.lower() for word in [
+                    "veckomeny", "veckans", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lunch"
+                ]):
+                    cleaned = clean_menu_text(text)
+                    print("✅ Found weekly menu content via Instaloader")
+                    return cleaned
+            except Exception as e:
+                print(f"❌ Failed to process IG post {count_checked}: {e}")
+                continue
+        print("❌ No weekly menu content found via Instaloader")
+        return None
+    except Exception as e:
+        print(f"❌ Instaloader failed: {e}")
         return None
 
 def scrape_ica_instagram(page_name, url):
@@ -362,7 +436,11 @@ def scrape_all_restaurants():
         if restaurant_name == "La Gare Malmö":
             content = scrape_la_gare_menu()
         else:
-            content = scrape_ica_instagram(restaurant_name, url)
+            # Try Instaloader first to bypass headless browser blocking
+            content = scrape_ica_instaloader()
+            if not content:
+                # Fallback to Selenium-based Instagram scraping
+                content = scrape_ica_instagram(restaurant_name, url)
             
         if content:
             formatted_content = format_menu_with_openai(content, restaurant_name)
