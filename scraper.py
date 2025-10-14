@@ -115,6 +115,37 @@ def clean_menu_text(text):
     
     return text
 
+def is_swedish_text(line: str) -> bool:
+    """Heuristically determine if a line is Swedish (and not French).
+
+    - Exclude lines containing common French accented characters
+    - Prefer lines containing Swedish letters or common Swedish words
+    - Exclude obvious non-content like prices/week numbers
+    """
+    if not line:
+        return False
+
+    lowered = line.lower().strip()
+
+    # Exclude French accented characters
+    french_accents = "éèêàâîïôûùçœ“”’ºº»«"
+    if any(ch in lowered for ch in french_accents):
+        return False
+
+    # Exclude obvious noise
+    if re.search(r"\bvecka\b|v\.\d+|\d+\s*:-|\d+kr|\bsek\b", lowered):
+        return False
+
+    # Require at least some Swedish characteristics
+    swedish_letters = any(ch in line for ch in "åäöÅÄÖ")
+    swedish_words = any(word in lowered for word in [
+        "med", "och", "sås", "potatis", "lök", "grädde", "kyckling",
+        "lax", "fläsk", "nöt", "grönsaker", "ris", "gratäng", "pasta",
+        "gryta", "sallad", "dagens", "vegetar", "wallenbergare"
+    ])
+
+    return swedish_letters or swedish_words
+
 def extract_text_from_images(driver):
     """Extract text from images on the page using OCR"""
     try:
@@ -364,50 +395,48 @@ def scrape_la_gare_menu():
         #     print(f"{i}: {line}")
         # print("--- End debug lines ---\n")
         
-        # Get current weekday
+        # Get current weekday (Swedish)
         today = get_current_weekday()
         print(f"Looking for menu for: {today}")
         
         # Find today's menu
         menu_content = []
-        
-        # Look for today's weekday in the lines
+
+        # Locate today's section (relaxed match)
+        today_index = -1
         for i, line in enumerate(lines):
-            if today.lower() in line.lower() and line.strip() == today.capitalize():
+            normalized = line.strip().lower()
+            if today in normalized:
+                today_index = i
                 print(f"Found today's section: {line}")
-                
-                # Look at the next few lines for menu items
-                for j in range(i + 1, min(i + 6, len(lines))):
-                    next_line = lines[j].strip()
-                    
-                    # Stop if we hit another weekday
-                    if any(day in next_line.lower() for day in ["måndag", "tisdag", "onsdag", "torsdag", "fredag"]) and next_line != line:
-                        break
-                    
-                    # Add lines that look like Swedish dishes (contain Swedish food words)
-                    if len(next_line) > 15 and any(word in next_line for word in ["Kyckling", "Lax", "Oxbringa", "Rapsgris", "Wallenbergare"]):
-                        menu_content.append(next_line)
-                        print(f"Added Swedish dish: {next_line}")
-                
                 break
-        
-        # Also get the vegetarian option
-        for i, line in enumerate(lines):
-            if "dagens veg" in line.lower():
-                # Get the next few lines for vegetarian option
-                for j in range(i + 1, min(i + 8, len(lines))):
-                    veg_line = lines[j].strip()
-                    if len(veg_line) > 15:
-                        # Look for Swedish vegetarian dishes (contains Swedish words)
-                        if "vitlök" in veg_line or "tomat" in veg_line or "persilja" in veg_line:
+
+        # Extract dishes below today's header until next weekday
+        if today_index >= 0:
+            for j in range(today_index + 1, min(today_index + 12, len(lines))):
+                next_line = lines[j].strip()
+                if not next_line:
+                    continue
+                # Stop if we hit another weekday header
+                if any(day in next_line.lower() for day in ["måndag", "tisdag", "onsdag", "torsdag", "fredag"]):
+                    break
+                # Only keep lines that look Swedish and like dishes
+                if len(next_line) > 8 and is_swedish_text(next_line):
+                    menu_content.append(next_line)
+                    print(f"Added Swedish dish: {next_line}")
+
+        # Also try to find vegetarian option anywhere
+        if not any("vegetar" in x.lower() or "veg" in x.lower() for x in menu_content):
+            for i, line in enumerate(lines):
+                if any(key in line.lower() for key in ["dagens veg", "vegetar", "veg."]):
+                    # Look the next few lines for the description
+                    for j in range(i + 1, min(i + 6, len(lines))):
+                        veg_line = lines[j].strip()
+                        if len(veg_line) > 8 and is_swedish_text(veg_line):
                             menu_content.append(f"Vegetarisk: {veg_line}")
-                            print(f"Added Swedish vegetarian dish: {veg_line}")
+                            print(f"Added vegetarian dish: {veg_line}")
                             break
-                        # If we find a pasta line but it's French, keep looking for Swedish version
-                        elif veg_line.startswith("Pasta") and ("ail" in veg_line or "persil" in veg_line):
-                            print(f"Found French vegetarian dish, looking for Swedish version: {veg_line}")
-                            continue
-                break
+                    break
         
         if menu_content:
             full_menu = "\n".join(menu_content)
@@ -426,8 +455,8 @@ def scrape_la_gare_menu():
 def scrape_all_restaurants():
     """Scrape all restaurant pages and save to JSON"""
     restaurants = {
-        "ICA Supermarket Hansa": "https://www.instagram.com/ica_supermarket_hansa/",
-        "La Gare Malmö": "scrape_la_gare"  # Special marker for La Gare
+        "La Gare Malmö": "scrape_la_gare",
+        "ICA Supermarket Hansa": "https://www.instagram.com/ica_supermarket_hansa/"
     }
     
     menu_data = {}
@@ -435,11 +464,10 @@ def scrape_all_restaurants():
     for restaurant_name, url in restaurants.items():
         if restaurant_name == "La Gare Malmö":
             content = scrape_la_gare_menu()
-        else:
-            # Try Instaloader first to bypass headless browser blocking
+        elif restaurant_name == "ICA Supermarket Hansa":
+            # Try Instaloader first; fallback to Selenium if needed
             content = scrape_ica_instaloader()
             if not content:
-                # Fallback to Selenium-based Instagram scraping
                 content = scrape_ica_instagram(restaurant_name, url)
             
         if content:
