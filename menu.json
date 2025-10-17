@@ -1,10 +1,10 @@
 {
   "La Gare Malmö": {
-    "raw": "Kyckling/bacon/banan/jordnöt\nVegetarisk: Linsgryta/rotfrukter/tomat/kokos",
-    "formatted": "🍗 Kyckling/bacon/banan/jordnöt\n🌿 Vegetarisk: Linsgryta/rotfrukter/tomat/kokos"
+    "raw": "Pannbiff/dijon/ägg/pepparrot\nDagens veg\nFriterad getost/betor/päron/mandel\nFråga personalen om allergener eller ursprung.\nVarmt välkommen!",
+    "formatted": "🍔 Pannbiff med dijon, ägg och pepparrot\n🥦 Dagens vegetariska rätt\n🧀 Friterad getost med betor, päron och mandel"
   },
   "ICA Supermarket Hansa": {
     "raw": ". a aa v.42 MH. I IN VECKANS LUNCH: MÅNDAG I Kycklingschnitzel med potatisgratäng. TISDAG 3 Ugnsbakad lax med potatis. I ONSDAG Pasta med köttbullar och tomatsås. TORSDAG I Kycklinggryta med soltorkade tomater, serveras med ris. FREDAG Grillbuffé med rostad potatis och grönsaker. I MN 15,90:-/hg ” || Med reservation för ändringar. i",
-    "formatted": "🍗 Kycklinggryta med soltorkade tomater, serveras med ris."
+    "formatted": "🍖 Grillbuffé med rostad potatis och grönsaker."
   }
 }
