@@ -1,10 +1,10 @@
 {
   "La Gare Malmö": {
-    "raw": "Pannbiff/dijon/ägg/pepparrot\nDagens veg\nFriterad getost/betor/päron/mandel\nFråga personalen om allergener eller ursprung.\nVarmt välkommen!",
-    "formatted": "🍔 Pannbiff med dijon, ägg och pepparrot\n🥦 Dagens vegetariska rätt\n🧀 Friterad getost med betor, päron och mandel"
+    "raw": "Stekt sill/lingon/dillsmör/ärtor\nVegetarisk: Friterad getost/betor/päron/mandel",
+    "formatted": "🐟 Stekt sill med lingon, dillsmör och ärtor\n🧀 Vegetarisk: Friterad getost med betor, päron och mandel"
   },
   "ICA Supermarket Hansa": {
-    "raw": ". a aa v.42 MH. I IN VECKANS LUNCH: MÅNDAG I Kycklingschnitzel med potatisgratäng. TISDAG 3 Ugnsbakad lax med potatis. I ONSDAG Pasta med köttbullar och tomatsås. TORSDAG I Kycklinggryta med soltorkade tomater, serveras med ris. FREDAG Grillbuffé med rostad potatis och grönsaker. I MN 15,90:-/hg ” || Med reservation för ändringar. i",
-    "formatted": "🍖 Grillbuffé med rostad potatis och grönsaker."
+    "raw": "a ag a fr ad a | la | ) ME 4 $ L VECKANS LUNCH: MÅNDAG I Köttbullar med gräddsås, potatismos & lingonsylt. TISDAG Pinsapizza med olika toppings. 4 Pocherad torsk i äggsås med potatis. ONSDAG Röd curry med kyckling, Serveras med ris, vårrullar och wokgrönsaker. TORSDAG Mac 'n cheese med svamp Serveras bl.a.med kycklingvingar & chorizo. FREDAG \" Olika sorters paj. Serveras med sallad och en basilika & parmesansås. NÅ ) NN FS . 4 15,90:-/hq Hj ” 4 | Med reservation för ändringar. |",
+    "formatted": "🍕 Pinsapizza med olika toppings"
   }
 }
