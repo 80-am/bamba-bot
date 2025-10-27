@@ -1,10 +1,10 @@
 {
   "La Gare Malmö": {
-    "raw": "Pannbiff/dijon/ägg/pepparrot\nDagens veg\nFriterad getost/betor/päron/mandel\nFråga personalen om allergener eller ursprung.\nVarmt välkommen!",
-    "formatted": "🍔 Pannbiff med dijon, ägg och pepparrot\n🥦 Dagens vegetariska rätt\n🧀 Friterad getost med betor, päron och mandel"
+    "raw": "Kycklingschnitzel/äppelcidersky/vitlökssmör/ärtor\nVegetarisk: Fråga personalen om allergener eller ursprung.",
+    "formatted": "🍗 Kycklingschnitzel med äppelcidersky, vitlökssmör och ärtor\n🌿 Vegetarisk: Fråga personalen om allergener eller ursprung."
   },
   "ICA Supermarket Hansa": {
-    "raw": "a ag a fr ad a | la | ) ME 4 $ L VECKANS LUNCH: MÅNDAG I Köttbullar med gräddsås, potatismos & lingonsylt. TISDAG Pinsapizza med olika toppings. 4 Pocherad torsk i äggsås med potatis. ONSDAG Röd curry med kyckling, Serveras med ris, vårrullar och wokgrönsaker. TORSDAG Mac 'n cheese med svamp Serveras bl.a.med kycklingvingar & chorizo. FREDAG \" Olika sorters paj. Serveras med sallad och en basilika & parmesansås. NÅ ) NN FS . 4 15,90:-/hq Hj ” 4 | Med reservation för ändringar. |",
-    "formatted": "🥧 Olika sorters paj. Serveras med sallad och en basilika & parmesansås."
+    "raw": "a lag År at mn — 7 , ” ; v.44 L VECKANS LUNCH: MÅNDAG ll Panerad fisk med potatismos, severas med ärtor, stuvad spenat, skolans dillsås och remouladsås. TISDAG | Korv stroganoff med ris. I ONSDAG Pasta med ost-& kalkonsås. Vegetarisk spenat-& ricottatortellini. TORSDAG I Kycklinggryta med tomat och örter, serveras med rostad potatis. FREDAG Kebab och falafel. Serveras med ris och klassiska tillbehör. I N | ) Y FS . 4 15,90:-/hq Hj ; 4 | Med reservation för ändringar. |",
+    "formatted": "🐟 Panerad fisk med potatismos, ärtor, stuvad spenat, dillsås och remouladsås"
   }
 }
