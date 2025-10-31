@@ -9,7 +9,6 @@ import openai
 import os
 import pytesseract
 from PIL import Image
-import instaloader
 import requests
 from io import BytesIO
 
@@ -91,6 +90,161 @@ def get_current_weekday():
         6: "söndag"
     }
     return weekdays[datetime.now().weekday()]
+
+def get_weekday_sequence():
+    """Return list of Swedish weekdays (Mon-Fri) in order, lowercase."""
+    return [
+        "måndag",
+        "tisdag",
+        "onsdag",
+        "torsdag",
+        "fredag"
+    ]
+
+def _emoji_for_line(text: str) -> str:
+    """Choose an emoji based on dish keywords."""
+    t = text.lower()
+    mapping = [
+        (['lax', 'fisk', 'torsk', 'sill', 'räkor', 'sill'], '🐟'),
+        (['kyckling', 'kyckl'], '🍗'),
+        (['köttbullar', 'fläsk', 'nöt', 'biff', 'ox', 'wallenbergare'], '🥩'),
+        (['pasta', 'tortellini', 'lasagne', 'lasagna'], '🍝'),
+        (['sallad', 'ceasar', 'caesar'], '🥗'),
+        (['soppa'], '🥣'),
+        (['vegetar', 'vegansk', 'veg'], '🥦'),
+        (['paj', 'quiche'], '🥧'),
+        (['ris'], '🍚'),
+        (['potatis', 'mos'], '🥔'),
+        (['gryta', 'gryt'], '🍲'),
+        (['burgare', 'burger'], '🍔'),
+        (['kebab', 'falafel'], '🥙'),
+    ]
+    for keys, emoji in mapping:
+        if any(k in t for k in keys):
+            return emoji
+    return '🍽️'
+
+def _format_lines_with_emojis(lines: list[str]) -> str:
+    return "\n".join([f"{_emoji_for_line(ln)} {ln}" for ln in lines])
+
+def extract_week_from_text(raw_text: str) -> dict:
+    """Parse a Swedish weekly menu text into a dict of weekdays -> list of dish lines.
+
+    Heuristic approach using weekday headers; tolerant to punctuation and casing.
+    """
+    if not raw_text:
+        return {}
+
+    text = raw_text.replace("\r", "\n")
+    # Normalize some common OCR separators into newlines to ease splitting
+    text = re.sub(r"\s*\|\s*", "\n", text)
+    text = re.sub(r"\s{2,}", " ", text)
+
+    days = get_weekday_sequence()
+    # Build regex to find day headers case-insensitively
+    day_pattern = r"(?i)(måndag|tisdag|onsdag|torsdag|fredag)\b"
+
+    # Find day occurrences across the whole text
+    matches = list(re.finditer(day_pattern, text))
+    if not matches:
+        # Fallback: try lines based approach (legacy)
+        lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+        day_to_index = {}
+        for i, line in enumerate(lines):
+            lowered = line.lower()
+            for day in days:
+                if re.search(rf"\b{day}\b\s*[:\-]?", lowered):
+                    day_to_index.setdefault(day, i)
+        ordered = [(day, day_to_index[day]) for day in days if day in day_to_index]
+        ordered.sort(key=lambda x: x[1])
+        week = {}
+        for idx, (day, start) in enumerate(ordered):
+            end = ordered[idx + 1][1] if idx + 1 < len(ordered) else len(lines)
+            dishes = []
+            for j in range(start + 1, end):
+                ln = lines[j].strip()
+                if not ln:
+                    continue
+                if any(re.search(rf"\b{d}\b", ln.lower()) for d in days):
+                    break
+                if len(ln) > 6 and is_swedish_text(ln):
+                    dishes.append(ln)
+            if dishes:
+                week[day] = dishes
+        return week
+
+    # Build per-day segments from positions
+    week = {}
+    for i, m in enumerate(matches):
+        day_raw = m.group(1)
+        day = day_raw.lower()
+        start = m.end()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        segment = text[start:end].strip()
+        # Split segment on common delimiters into potential dishes
+        parts = re.split(r"\s*[\n\.|•|-]\s+", segment)
+        dishes = []
+        for p in parts:
+            s = p.strip(" -\n\t:|·")
+            if len(s) < 6:
+                continue
+            if is_swedish_text(s):
+                dishes.append(s)
+        if dishes:
+            week[day] = dishes
+
+    return week
+
+def format_week_with_openai(week_map: dict, restaurant_name: str) -> dict:
+    """Format each day's dishes with emojis using OpenAI; fallback to prefix if API fails."""
+    formatted = {}
+    try:
+        client = openai.OpenAI(api_key=os.getenv('OPENAI_KEY'))
+        # Build a compact prompt asking for same order back
+        plain = []
+        for day in get_weekday_sequence():
+            items = week_map.get(day, [])
+            if not items:
+                continue
+            plain.append(f"{day.capitalize()}:\n" + "\n".join(items))
+        if not plain:
+            return formatted
+        prompt = (
+            "Du är en formatterare för svenska lunchmenyer. Lägg till passande mat-emojis i början av varje rad. "
+            "Behåll dagarnas ordning och rubriker. Returnera EXAKT samma struktur i textform, inte JSON.\n\n" +
+            "\n\n".join(plain)
+        )
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=600,
+            temperature=0.2
+        )
+        out = response.choices[0].message.content.strip()
+        # Parse back into per day sections
+        sections = re.split(r"(?mi)^(Måndag|Tisdag|Onsdag|Torsdag|Fredag)\s*:\s*$", out)
+        # sections alternates: [prefix, Day, content, Day, content, ...]
+        tmp_day = None
+        for part in sections:
+            if not part:
+                continue
+            low = part.lower()
+            if low in get_weekday_sequence():
+                tmp_day = low
+                continue
+            if tmp_day:
+                formatted[tmp_day] = part.strip()
+                tmp_day = None
+        # Fallback fill any missing days with simple emoji bullets
+        for day in week_map:
+            if day not in formatted:
+                formatted[day] = _format_lines_with_emojis(week_map[day])
+        return formatted
+    except Exception:
+        # Local emoji-based fallback
+        for day, items in week_map.items():
+            formatted[day] = _format_lines_with_emojis(items)
+        return formatted
 
 def clean_menu_text(text):
     """Clean up menu text by removing UI elements and extra whitespace"""
@@ -224,56 +378,7 @@ def _ocr_image_bytes(image_bytes: bytes) -> str:
         print(f"❌ OCR bytes processing failed: {e}")
         return ""
 
-def scrape_ica_instaloader(username: str = "ica_supermarket_hansa", max_posts: int = 10):
-    """Fetch recent Instagram posts via Instaloader (no login) and OCR for weekly menu text."""
-    try:
-        print(f"Loading ICA via Instaloader: https://www.instagram.com/{username}/ ...")
-        loader = instaloader.Instaloader(download_pictures=False,
-                                         download_videos=False,
-                                         download_video_thumbnails=False,
-                                         save_metadata=False,
-                                         compress_json=False,
-                                         quiet=True)
-
-        # Optional login to reduce rate limiting and increase reliability
-        ig_user = os.getenv("INSTAGRAM_USERNAME")
-        ig_pass = os.getenv("INSTAGRAM_PASSWORD")
-        if ig_user and ig_pass:
-            try:
-                print("Attempting Instagram login via Instaloader...")
-                loader.login(ig_user, ig_pass)
-                print("✅ Instagram login successful")
-            except Exception as e:
-                print(f"⚠️ Instagram login failed, continuing without login: {e}")
-
-        profile = instaloader.Profile.from_username(loader.context, username)
-        count_checked = 0
-        for post in profile.get_posts():
-            if count_checked >= max_posts:
-                break
-            count_checked += 1
-            try:
-                url = post.url  # direct image URL
-                print(f"Processing IG post {count_checked}: {url[:80]}...")
-                resp = requests.get(url, timeout=15)
-                if resp.status_code != 200:
-                    continue
-                text = _ocr_image_bytes(resp.content)
-                print(f"OCR result {count_checked}: {text[:120]}...")
-                if len(text) > 30 and any(word in text.lower() for word in [
-                    "veckomeny", "veckans", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lunch"
-                ]):
-                    cleaned = clean_menu_text(text)
-                    print("✅ Found weekly menu content via Instaloader")
-                    return cleaned
-            except Exception as e:
-                print(f"❌ Failed to process IG post {count_checked}: {e}")
-                continue
-        print("❌ No weekly menu content found via Instaloader")
-        return None
-    except Exception as e:
-        print(f"❌ Instaloader failed: {e}")
-        return None
+# Instaloader path removed; using Selenium + OCR approach only
 
 def scrape_ica_instagram(page_name, url):
     """Scrape ICA Instagram page for weekly menu using improved OCR"""
@@ -356,7 +461,7 @@ def scrape_ica_instagram(page_name, url):
         driver.quit()
 
 def scrape_la_gare_menu():
-    """Scrape La Gare's lunch menu for today"""
+    """Scrape La Gare's lunch menu for the whole week (Mon-Fri)."""
     # Set up headless Chrome
     chrome_options = Options()
     chrome_options.add_argument("--headless")
@@ -395,56 +500,65 @@ def scrape_la_gare_menu():
         #     print(f"{i}: {line}")
         # print("--- End debug lines ---\n")
         
-        # Get current weekday (Swedish)
-        today = get_current_weekday()
-        print(f"Looking for menu for: {today}")
-        
-        # Find today's menu
-        menu_content = []
-
-        # Locate today's section (relaxed match)
-        today_index = -1
+        # Build weekly map by scanning for weekday headers
+        days = get_weekday_sequence()
+        day_indices = {}
         for i, line in enumerate(lines):
-            normalized = line.strip().lower()
-            if today in normalized:
-                today_index = i
-                print(f"Found today's section: {line}")
-                break
+            lowered = line.strip().lower()
+            for day in days:
+                if re.search(rf"\b{day}\b", lowered) and day not in day_indices:
+                    day_indices[day] = i
+        ordered = [(d, day_indices[d]) for d in days if d in day_indices]
+        ordered.sort(key=lambda x: x[1])
 
-        # Extract dishes below today's header until next weekday
-        if today_index >= 0:
-            for j in range(today_index + 1, min(today_index + 12, len(lines))):
-                next_line = lines[j].strip()
-                if not next_line:
+        # Exclude obvious footer/noise content
+        exclude_keywords = [
+            "restaurang la gare", "hållbarhet", "våra hotell", "bli medlem", "företagsavtal",
+            "idrottslag", "användarvillkor", "sekretesspolicy", "bedrägeri", "omdömen",
+            "varmt välkommen", "fråga personalen"
+        ]
+
+        def is_noise(ln: str) -> bool:
+            low = ln.lower()
+            return any(k in low for k in exclude_keywords)
+
+        week_map = {}
+        for idx, (day, start) in enumerate(ordered):
+            end = ordered[idx + 1][1] if idx + 1 < len(ordered) else len(lines)
+            bucket = []
+            for j in range(start + 1, end):
+                ln = lines[j].strip()
+                if not ln:
                     continue
-                # Stop if we hit another weekday header
-                if any(day in next_line.lower() for day in ["måndag", "tisdag", "onsdag", "torsdag", "fredag"]):
+                if any(d in ln.lower() for d in days):
                     break
-                # Only keep lines that look Swedish and like dishes
-                if len(next_line) > 8 and is_swedish_text(next_line):
-                    menu_content.append(next_line)
-                    print(f"Added Swedish dish: {next_line}")
+                if is_noise(ln):
+                    continue
+                if len(ln) > 8 and is_swedish_text(ln):
+                    bucket.append(ln)
+                # Safety cap per day to avoid swallowing the whole page footer
+                if len(bucket) >= 6:
+                    break
+            # Try to enrich vegetarian option if missing
+            if not any("vegetar" in x.lower() or "veg" in x.lower() for x in bucket):
+                for i, line in enumerate(lines):
+                    if any(key in line.lower() for key in ["dagens veg", "vegetar", "veg."]):
+                        for j in range(i + 1, min(i + 6, len(lines))):
+                            veg_line = lines[j].strip()
+                            if is_noise(veg_line):
+                                continue
+                            if len(veg_line) > 8 and is_swedish_text(veg_line):
+                                bucket.append(f"Vegetarisk: {veg_line}")
+                                break
+                        break
+            if bucket:
+                week_map[day] = bucket
 
-        # Also try to find vegetarian option anywhere
-        if not any("vegetar" in x.lower() or "veg" in x.lower() for x in menu_content):
-            for i, line in enumerate(lines):
-                if any(key in line.lower() for key in ["dagens veg", "vegetar", "veg."]):
-                    # Look the next few lines for the description
-                    for j in range(i + 1, min(i + 6, len(lines))):
-                        veg_line = lines[j].strip()
-                        if len(veg_line) > 8 and is_swedish_text(veg_line):
-                            menu_content.append(f"Vegetarisk: {veg_line}")
-                            print(f"Added vegetarian dish: {veg_line}")
-                            break
-                    break
-        
-        if menu_content:
-            full_menu = "\n".join(menu_content)
-            print(f"✅ Found menu for {today}")
-            return full_menu
-        else:
-            print(f"❌ No menu found for {today}")
-            return None
+        if week_map:
+            print("✅ Found La Gare weekly menu")
+            return week_map
+        print("❌ No weekly menu found for La Gare")
+        return None
             
     except Exception as e:
         print(f"Error scraping La Gare menu: {e}")
@@ -453,7 +567,15 @@ def scrape_la_gare_menu():
         driver.quit()
 
 def scrape_all_restaurants():
-    """Scrape all restaurant pages and save to JSON"""
+    """Scrape all restaurants and save the full week's menus in one go.
+
+    Output structure per restaurant:
+    {
+      "week_raw_text": "..." (optional),
+      "week": { "måndag": {"raw": [..], "formatted": ".."}, ... },
+      "formatted_today": "..."  # For backward compatibility
+    }
+    """
     restaurants = {
         "La Gare Malmö": "scrape_la_gare",
         "ICA Supermarket Hansa": "https://www.instagram.com/ica_supermarket_hansa/"
@@ -463,18 +585,45 @@ def scrape_all_restaurants():
     
     for restaurant_name, url in restaurants.items():
         if restaurant_name == "La Gare Malmö":
-            content = scrape_la_gare_menu()
+            week_map = scrape_la_gare_menu()
+            week_raw_text = None
         elif restaurant_name == "ICA Supermarket Hansa":
-            # Try Instaloader first; fallback to Selenium if needed
-            content = scrape_ica_instaloader()
-            if not content:
-                content = scrape_ica_instagram(restaurant_name, url)
-            
-        if content:
-            formatted_content = format_menu_with_openai(content, restaurant_name)
+            # Use Selenium+OCR for Instagram weekly menu text
+            week_raw_text = scrape_ica_instagram(restaurant_name, url)
+            week_map = extract_week_from_text(week_raw_text) if week_raw_text else None
+        else:
+            week_map = None
+            week_raw_text = None
+        
+        if week_map:
+            formatted_week = format_week_with_openai(week_map, restaurant_name)
+            # Build per-day objects
+            week_obj = {}
+            for day in get_weekday_sequence():
+                items = week_map.get(day)
+                if not items:
+                    continue
+                week_obj[day] = {
+                    "raw": items,
+                    "formatted": formatted_week.get(day, _format_lines_with_emojis(items))
+                }
+            today_key = get_current_weekday()
+            formatted_today = week_obj.get(today_key, {}).get("formatted")
             menu_data[restaurant_name] = {
-                "raw": content,
-                "formatted": formatted_content
+                **({"week_raw_text": week_raw_text} if week_raw_text else {}),
+                "week": week_obj,
+                "formatted_today": formatted_today or "",
+                # Backward compatibility with existing Slack workflow
+                "formatted": formatted_today or ""
+            }
+        elif week_raw_text:
+            # Fallback: include restaurant with today's formatted text even if per-day parsing failed
+            today_formatted = format_menu_with_openai(week_raw_text, restaurant_name)
+            menu_data[restaurant_name] = {
+                "week_raw_text": week_raw_text,
+                "week": {},
+                "formatted_today": today_formatted,
+                "formatted": today_formatted
             }
     
     # Save to JSON file
@@ -482,12 +631,9 @@ def scrape_all_restaurants():
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(menu_data, f, ensure_ascii=False, indent=2)
     
-    print(f"\n📄 Menu saved to {output_file}")
-    print("\nMenu content:")
+    print(f"\n📄 Weekly menus saved to {output_file}")
     for restaurant, data in menu_data.items():
-        print(f"\n{restaurant}:")
-        print(f"  Raw: {data['raw']}")
-        print(f"  Formatted: {data['formatted']}")
+        print(f"- {restaurant}: days captured = {len(data.get('week', {}))}")
 
 if __name__ == "__main__":
     scrape_all_restaurants()
