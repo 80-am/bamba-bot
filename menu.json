@@ -3,73 +3,79 @@
     "week": {
       "måndag": {
         "raw": [
-          "Rapsgris/tomat/saffran/matvete",
-          "Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+          "Pasta/bolognese/gremolata/parmesan",
+          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
         ],
-        "formatted": "🍚 Rapsgris/tomat/saffran/matvete\n🥦 Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+        "formatted": "🍝 Pasta/bolognese/gremolata/parmesan\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
       },
       "tisdag": {
         "raw": [
-          "Fiskbiff/brynt smör/ägg/pepparrot/sockerärta",
-          "Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+          "Spätta/remoulad/äpple/fänkål",
+          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
         ],
-        "formatted": "🐟 Fiskbiff/brynt smör/ägg/pepparrot/sockerärta\n🥦 Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+        "formatted": "🍽️ Spätta/remoulad/äpple/fänkål\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
       },
       "onsdag": {
         "raw": [
-          "Kalvfärsbiff/svamp/grönkål/lingon",
-          "Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+          "Kålpudding/lingon/gurka/gräddsås",
+          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
         ],
-        "formatted": "🥩 Kalvfärsbiff/svamp/grönkål/lingon\n🥦 Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+        "formatted": "🍽️ Kålpudding/lingon/gurka/gräddsås\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
       },
       "torsdag": {
         "raw": [
-          "Kyckling/chipotle/majs/coleslaw",
-          "Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+          "Oxe/rödvin/svamp/lök",
+          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
         ],
-        "formatted": "🍗 Kyckling/chipotle/majs/coleslaw\n🥦 Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+        "formatted": "🥩 Oxe/rödvin/svamp/lök\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
       },
       "fredag": {
         "raw": [
-          "Fläsksida/citron/kikärta/persilja/vitlök",
+          "Fläskschnitzel/kapris/citron/ärtor",
           "Dagens Veg",
-          "Böngryta/tomat/aubergine/solrosfrö"
+          "Falafel/citronhummus/tomat/rödlök"
         ],
-        "formatted": "🥩 Fläsksida/citron/kikärta/persilja/vitlök\n🥦 Dagens Veg\n🍲 Böngryta/tomat/aubergine/solrosfrö"
+        "formatted": "🥩 Fläskschnitzel/kapris/citron/ärtor\n🥦 Dagens Veg\n🥙 Falafel/citronhummus/tomat/rödlök"
       }
     },
-    "formatted_today": "🐟 Fiskbiff/brynt smör/ägg/pepparrot/sockerärta\n🥦 Vegetarisk: Böngryta/tomat/aubergine/solrosfrö",
-    "formatted": "🐟 Fiskbiff/brynt smör/ägg/pepparrot/sockerärta\n🥦 Vegetarisk: Böngryta/tomat/aubergine/solrosfrö"
+    "formatted_today": "🍽️ Spätta/remoulad/äpple/fänkål\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök",
+    "formatted": "🍽️ Spätta/remoulad/äpple/fänkål\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
   },
   "ICA Supermarket Hansa": {
-    "week_raw_text": "la Å »ä Vv 45 Sä LJ ANNVECKANS LUNCH: MÅNDAG I Pannbiff (nötkött) med kokt potatis, svampsås och lingon. TISDAG | Saffransdoftade fiskgryta. I ONSDAG Gratinerad falukorv med potatismos. TORSDAG l Korvgulasch samt en kycklinggryta med dragon. FREDAG Fläskfilé och kycklingfilé med potatisgratäng. II h : y 15,90:-/hq ” i | Med reservation för ändringar. ]",
+    "week_raw_text": "a vag a fe am a aa ( j Vv 46 i f& I L VECKANS LUNCH: MÅNDAG I \"Gåsamiddag\" Kycklingben med klassiska gås-tillbehör. TISDAG S Pocherad fisk i vitvinssås, serveras med potatismos. I ONSDAG Köttbullar i tomatsås med mozzarella, serveras med ris. TORSDAG I Raggmunk med stekt fläsk och lingonsylt. FREDAG Pulled pork, serveras med ris, nachos och grönsaker. I N | ) (0 e- ; $ 15,90:-/hq ” 4 | Med reservation för ändringar. |",
     "week": {
       "måndag": {
         "raw": [
-          "I Pannbiff (nötkött) med kokt potatis, svampsås och lingon."
+          "I \"Gåsamiddag\" Kycklingben med klassiska gås-tillbehör."
         ],
-        "formatted": "🥩 I Pannbiff (nötkött) med kokt potatis, svampsås och lingon."
+        "formatted": "🍗 I \"Gåsamiddag\" Kycklingben med klassiska gås-tillbehör."
       },
       "tisdag": {
         "raw": [
-          "Saffransdoftade fiskgryta"
+          "S Pocherad fisk i vitvinssås, serveras med potatismos"
         ],
-        "formatted": "🐟 Saffransdoftade fiskgryta"
+        "formatted": "🐟 S Pocherad fisk i vitvinssås, serveras med potatismos"
       },
       "onsdag": {
         "raw": [
-          "Gratinerad falukorv med potatismos."
+          "Köttbullar i tomatsås med mozzarella, serveras med ris."
         ],
-        "formatted": "🥔 Gratinerad falukorv med potatismos."
+        "formatted": "🥩 Köttbullar i tomatsås med mozzarella, serveras med ris."
       },
       "torsdag": {
         "raw": [
-          "l Korvgulasch samt en kycklinggryta med dragon."
+          "I Raggmunk med stekt fläsk och lingonsylt."
         ],
-        "formatted": "🍗 l Korvgulasch samt en kycklinggryta med dragon."
+        "formatted": "🥩 I Raggmunk med stekt fläsk och lingonsylt."
+      },
+      "fredag": {
+        "raw": [
+          "Pulled pork, serveras med ris, nachos och grönsaker"
+        ],
+        "formatted": "🍚 Pulled pork, serveras med ris, nachos och grönsaker"
       }
     },
-    "formatted_today": "🐟 Saffransdoftade fiskgryta",
-    "formatted": "🐟 Saffransdoftade fiskgryta"
+    "formatted_today": "🐟 S Pocherad fisk i vitvinssås, serveras med potatismos",
+    "formatted": "🐟 S Pocherad fisk i vitvinssås, serveras med potatismos"
   }
 }
