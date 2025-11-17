@@ -3,79 +3,69 @@
     "week": {
       "måndag": {
         "raw": [
-          "Pasta/bolognese/gremolata/parmesan",
-          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
+          "Kotlett/citron/blomkål/mandel"
         ],
-        "formatted": "🍝 Pasta/bolognese/gremolata/parmesan\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
+        "formatted": "Kotlett/citron/blomkål/mandel"
       },
       "tisdag": {
         "raw": [
-          "Spätta/remoulad/äpple/fänkål",
-          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
+          "Fiskgryta/tomat/rotfrukter/aioli"
         ],
-        "formatted": "🍽️ Spätta/remoulad/äpple/fänkål\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
-      },
-      "onsdag": {
-        "raw": [
-          "Kålpudding/lingon/gurka/gräddsås",
-          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
-        ],
-        "formatted": "🍽️ Kålpudding/lingon/gurka/gräddsås\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
+        "formatted": "Fiskgryta/tomat/rotfrukter/aioli"
       },
       "torsdag": {
         "raw": [
-          "Oxe/rödvin/svamp/lök",
-          "Vegetarisk: Falafel/citronhummus/tomat/rödlök"
+          "Biff lindström/skysås/persiljesmör/ärtor"
         ],
-        "formatted": "🥩 Oxe/rödvin/svamp/lök\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
+        "formatted": "Biff lindström/skysås/persiljesmör/ärtor"
       },
       "fredag": {
         "raw": [
-          "Fläskschnitzel/kapris/citron/ärtor",
-          "Dagens Veg",
-          "Falafel/citronhummus/tomat/rödlök"
+          "Kyckling/bearnaise/broccoli/lök",
+          "Dagens Veg"
         ],
-        "formatted": "🥩 Fläskschnitzel/kapris/citron/ärtor\n🥦 Dagens Veg\n🥙 Falafel/citronhummus/tomat/rödlök"
+        "formatted": "Kyckling/bearnaise/broccoli/lök"
       }
     },
-    "formatted_today": "🍽️ Spätta/remoulad/äpple/fänkål\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök",
-    "formatted": "🍽️ Spätta/remoulad/äpple/fänkål\n🥦 Vegetarisk: Falafel/citronhummus/tomat/rödlök"
+    "formatted_today": "Kotlett/citron/blomkål/mandel",
+    "formatted": "Kotlett/citron/blomkål/mandel"
   },
   "ICA Supermarket Hansa": {
-    "week_raw_text": "a vag a fe am a aa ( j Vv 46 i f& I L VECKANS LUNCH: MÅNDAG I \"Gåsamiddag\" Kycklingben med klassiska gås-tillbehör. TISDAG S Pocherad fisk i vitvinssås, serveras med potatismos. I ONSDAG Köttbullar i tomatsås med mozzarella, serveras med ris. TORSDAG I Raggmunk med stekt fläsk och lingonsylt. FREDAG Pulled pork, serveras med ris, nachos och grönsaker. I N | ) (0 e- ; $ 15,90:-/hq ” 4 | Med reservation för ändringar. |",
+    "week_raw_text": "VECKANS LUNCH: Måndag Kycklingsenhitzel med potatisgratäng och rödvinssås. Tisdag Torsk med senapssås, serveras med kokt potatis. Onsdag Kyckling Tikka Masala med ris. Torsdag Ärtsoppa med pannkakor. Chorizo och rotfruktsgratäng. Fredag Fläskfilé samt kycklingfilé med rostad potatis. Med reservation för ändringar.",
     "week": {
       "måndag": {
         "raw": [
-          "I \"Gåsamiddag\" Kycklingben med klassiska gås-tillbehör."
+          "Kycklingsenhitzel med potatisgratäng och rödvinssås."
         ],
-        "formatted": "🍗 I \"Gåsamiddag\" Kycklingben med klassiska gås-tillbehör."
+        "formatted": "🍗 Kycklingsenhitzel med potatisgratäng och rödvinssås."
       },
       "tisdag": {
         "raw": [
-          "S Pocherad fisk i vitvinssås, serveras med potatismos"
+          "Torsk med senapssås, serveras med kokt potatis."
         ],
-        "formatted": "🐟 S Pocherad fisk i vitvinssås, serveras med potatismos"
+        "formatted": "🐟 Torsk med senapssås, serveras med kokt potatis."
       },
       "onsdag": {
         "raw": [
-          "Köttbullar i tomatsås med mozzarella, serveras med ris."
+          "Kyckling Tikka Masala med ris."
         ],
-        "formatted": "🥩 Köttbullar i tomatsås med mozzarella, serveras med ris."
+        "formatted": "🍗 Kyckling Tikka Masala med ris."
       },
       "torsdag": {
         "raw": [
-          "I Raggmunk med stekt fläsk och lingonsylt."
+          "Ärtsoppa med pannkakor",
+          "Chorizo och rotfruktsgratäng."
         ],
-        "formatted": "🥩 I Raggmunk med stekt fläsk och lingonsylt."
+        "formatted": "🥣 Ärtsoppa med pannkakor\n🍽️ Chorizo och rotfruktsgratäng."
       },
       "fredag": {
         "raw": [
-          "Pulled pork, serveras med ris, nachos och grönsaker"
+          "Med reservation för ändringar."
         ],
-        "formatted": "🍚 Pulled pork, serveras med ris, nachos och grönsaker"
+        "formatted": "🍽️ Med reservation för ändringar."
       }
     },
-    "formatted_today": "🐟 S Pocherad fisk i vitvinssås, serveras med potatismos",
-    "formatted": "🐟 S Pocherad fisk i vitvinssås, serveras med potatismos"
+    "formatted_today": "🍗 Kycklingsenhitzel med potatisgratäng och rödvinssås.",
+    "formatted": "🍗 Kycklingsenhitzel med potatisgratäng och rödvinssås."
   }
 }
