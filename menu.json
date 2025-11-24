@@ -5,67 +5,66 @@
         "raw": [
           "Kotlett/citron/blomkål/mandel"
         ],
-        "formatted": "Kotlett/citron/blomkål/mandel"
+        "formatted": "🍽️ Kotlett/citron/blomkål/mandel"
       },
       "tisdag": {
         "raw": [
           "Fiskgryta/tomat/rotfrukter/aioli"
         ],
-        "formatted": "Fiskgryta/tomat/rotfrukter/aioli"
+        "formatted": "🐟 Fiskgryta/tomat/rotfrukter/aioli"
       },
       "torsdag": {
         "raw": [
           "Biff lindström/skysås/persiljesmör/ärtor"
         ],
-        "formatted": "Biff lindström/skysås/persiljesmör/ärtor"
+        "formatted": "🥩 Biff lindström/skysås/persiljesmör/ärtor"
       },
       "fredag": {
         "raw": [
           "Kyckling/bearnaise/broccoli/lök",
           "Dagens Veg"
         ],
-        "formatted": "Kyckling/bearnaise/broccoli/lök"
+        "formatted": "🍗 Kyckling/bearnaise/broccoli/lök\n🥦 Dagens Veg"
       }
     },
-    "formatted_today": "Kotlett/citron/blomkål/mandel",
-    "formatted": "Kotlett/citron/blomkål/mandel"
+    "formatted_today": "🍽️ Kotlett/citron/blomkål/mandel",
+    "formatted": "🍽️ Kotlett/citron/blomkål/mandel"
   },
   "ICA Supermarket Hansa": {
-    "week_raw_text": "VECKANS LUNCH: Måndag Kycklingsenhitzel med potatisgratäng och rödvinssås. Tisdag Torsk med senapssås, serveras med kokt potatis. Onsdag Kyckling Tikka Masala med ris. Torsdag Ärtsoppa med pannkakor. Chorizo och rotfruktsgratäng. Fredag Fläskfilé samt kycklingfilé med rostad potatis. Med reservation för ändringar.",
+    "week_raw_text": "4 a v.42 UJ ANVVECKANS LUNCH: MÅNDAG I Köttbullar med gräddsås, potatismos och lingonsylt. TISDAG Teriyakibakad lax, fr serveras med vegetariska vårrullar, wokgrönsaker och ris. ONSDAG Lasagnette. Vegetarisk tortellini. TORSDAG I Isterband samt bratwurst, serveras med gratinerad blomkål och kokt potatis. FREDAG Högrevschili, serveras med ris, gräddfil och nachos. I Å ) ) ) Ö , 15,90:-/hq i | Med reservation för ändringar. 1",
     "week": {
       "måndag": {
         "raw": [
-          "Kycklingsenhitzel med potatisgratäng och rödvinssås."
+          "I Köttbullar med gräddsås, potatismos och lingonsylt."
         ],
-        "formatted": "🍗 Kycklingsenhitzel med potatisgratäng och rödvinssås."
+        "formatted": "🥩 I Köttbullar med gräddsås, potatismos och lingonsylt."
       },
       "tisdag": {
         "raw": [
-          "Torsk med senapssås, serveras med kokt potatis."
+          "Teriyakibakad lax, fr serveras med vegetariska vårrullar, wokgrönsaker och ris."
         ],
-        "formatted": "🐟 Torsk med senapssås, serveras med kokt potatis."
+        "formatted": "🐟 Teriyakibakad lax, fr serveras med vegetariska vårrullar, wokgrönsaker och ris."
       },
       "onsdag": {
         "raw": [
-          "Kyckling Tikka Masala med ris."
+          "Vegetarisk tortellini."
         ],
-        "formatted": "🍗 Kyckling Tikka Masala med ris."
+        "formatted": "🍝 Vegetarisk tortellini."
       },
       "torsdag": {
         "raw": [
-          "Ärtsoppa med pannkakor",
-          "Chorizo och rotfruktsgratäng."
+          "I Isterband samt bratwurst, serveras med gratinerad blomkål och kokt potatis."
         ],
-        "formatted": "🥣 Ärtsoppa med pannkakor\n🍽️ Chorizo och rotfruktsgratäng."
+        "formatted": "🥔 I Isterband samt bratwurst, serveras med gratinerad blomkål och kokt potatis."
       },
       "fredag": {
         "raw": [
-          "Med reservation för ändringar."
+          "Högrevschili, serveras med ris, gräddfil och nachos"
         ],
-        "formatted": "🍽️ Med reservation för ändringar."
+        "formatted": "🍚 Högrevschili, serveras med ris, gräddfil och nachos"
       }
     },
-    "formatted_today": "🍗 Kycklingsenhitzel med potatisgratäng och rödvinssås.",
-    "formatted": "🍗 Kycklingsenhitzel med potatisgratäng och rödvinssås."
+    "formatted_today": "🥩 I Köttbullar med gräddsås, potatismos och lingonsylt.",
+    "formatted": "🥩 I Köttbullar med gräddsås, potatismos och lingonsylt."
   }
 }
