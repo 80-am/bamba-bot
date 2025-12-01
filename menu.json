@@ -3,32 +3,43 @@
     "week": {
       "måndag": {
         "raw": [
-          "Kotlett/citron/blomkål/mandel"
+          "Köttbullar/gräddsås/lingon/gurka",
+          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
         ],
-        "formatted": "🍽️ Kotlett/citron/blomkål/mandel"
+        "formatted": "🥩 Köttbullar/gräddsås/lingon/gurka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
       },
       "tisdag": {
         "raw": [
-          "Fiskgryta/tomat/rotfrukter/aioli"
+          "Lax/hummerhollandaise/morot/palsternacka",
+          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
         ],
-        "formatted": "🐟 Fiskgryta/tomat/rotfrukter/aioli"
+        "formatted": "🐟 Lax/hummerhollandaise/morot/palsternacka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+      },
+      "onsdag": {
+        "raw": [
+          "Kycklingschnitzel/äpple/kapris/rädisa",
+          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+        ],
+        "formatted": "🍗 Kycklingschnitzel/äpple/kapris/rädisa\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
       },
       "torsdag": {
         "raw": [
-          "Biff lindström/skysås/persiljesmör/ärtor"
+          "Hjortskav/rotfrukter/svartkål/lingon",
+          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
         ],
-        "formatted": "🥩 Biff lindström/skysås/persiljesmör/ärtor"
+        "formatted": "🍽️ Hjortskav/rotfrukter/svartkål/lingon\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
       },
       "fredag": {
         "raw": [
-          "Kyckling/bearnaise/broccoli/lök",
-          "Dagens Veg"
+          "Pannbiff/rösti/chili gräddsås/tomat",
+          "Dagens veg",
+          "Vegansk kålpudding/löksky/lingon/gurka"
         ],
-        "formatted": "🍗 Kyckling/bearnaise/broccoli/lök\n🥦 Dagens Veg"
+        "formatted": "🥩 Pannbiff/rösti/chili gräddsås/tomat\n🥦 Dagens veg\n🥦 Vegansk kålpudding/löksky/lingon/gurka"
       }
     },
-    "formatted_today": "🍽️ Kotlett/citron/blomkål/mandel",
-    "formatted": "🍽️ Kotlett/citron/blomkål/mandel"
+    "formatted_today": "🥩 Köttbullar/gräddsås/lingon/gurka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka",
+    "formatted": "🥩 Köttbullar/gräddsås/lingon/gurka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
   },
   "ICA Supermarket Hansa": {
     "week_raw_text": "4 a v.42 UJ ANVVECKANS LUNCH: MÅNDAG I Köttbullar med gräddsås, potatismos och lingonsylt. TISDAG Teriyakibakad lax, fr serveras med vegetariska vårrullar, wokgrönsaker och ris. ONSDAG Lasagnette. Vegetarisk tortellini. TORSDAG I Isterband samt bratwurst, serveras med gratinerad blomkål och kokt potatis. FREDAG Högrevschili, serveras med ris, gräddfil och nachos. I Å ) ) ) Ö , 15,90:-/hq i | Med reservation för ändringar. 1",
