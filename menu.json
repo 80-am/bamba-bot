@@ -38,44 +38,44 @@
         "formatted": "🥩 Pannbiff/rösti/chili gräddsås/tomat\n🥦 Dagens veg\n🥦 Vegansk kålpudding/löksky/lingon/gurka"
       }
     },
-    "formatted_today": "🥩 Köttbullar/gräddsås/lingon/gurka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka",
-    "formatted": "🥩 Köttbullar/gräddsås/lingon/gurka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+    "formatted_today": "🍽️ Hjortskav/rotfrukter/svartkål/lingon\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka",
+    "formatted": "🍽️ Hjortskav/rotfrukter/svartkål/lingon\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
   },
   "ICA Supermarket Hansa": {
-    "week_raw_text": "4 a v.42 UJ ANVVECKANS LUNCH: MÅNDAG I Köttbullar med gräddsås, potatismos och lingonsylt. TISDAG Teriyakibakad lax, fr serveras med vegetariska vårrullar, wokgrönsaker och ris. ONSDAG Lasagnette. Vegetarisk tortellini. TORSDAG I Isterband samt bratwurst, serveras med gratinerad blomkål och kokt potatis. FREDAG Högrevschili, serveras med ris, gräddfil och nachos. I Å ) ) ) Ö , 15,90:-/hq i | Med reservation för ändringar. 1",
+    "week_raw_text": "| a — = NSD v.42 4 kh TT sn \"4 UY ANVVECKANS LUNCH: MÅNDAG I Panerad fisk med kokt potatis, stuvad spenat och ärtor. TISDAG - Kyckling i en örtig tomatsås med rostad potatis. I ONSDAG Ostgratinerad kassler, serveras med ris. TORSDAG I Kyckling med wokade nudlar och grönsaker. FREDAG Tacogratäng, serveras med ris och grönsaker. I NE h : j 15,90:-/hq ' | Med reservation för ändringar.",
     "week": {
       "måndag": {
         "raw": [
-          "I Köttbullar med gräddsås, potatismos och lingonsylt."
+          "I Panerad fisk med kokt potatis, stuvad spenat och ärtor."
         ],
-        "formatted": "🥩 I Köttbullar med gräddsås, potatismos och lingonsylt."
+        "formatted": "🐟 I Panerad fisk med kokt potatis, stuvad spenat och ärtor."
       },
       "tisdag": {
         "raw": [
-          "Teriyakibakad lax, fr serveras med vegetariska vårrullar, wokgrönsaker och ris."
+          "Kyckling i en örtig tomatsås med rostad potatis"
         ],
-        "formatted": "🐟 Teriyakibakad lax, fr serveras med vegetariska vårrullar, wokgrönsaker och ris."
+        "formatted": "🍗 Kyckling i en örtig tomatsås med rostad potatis"
       },
       "onsdag": {
         "raw": [
-          "Vegetarisk tortellini."
+          "Ostgratinerad kassler, serveras med ris."
         ],
-        "formatted": "🍝 Vegetarisk tortellini."
+        "formatted": "🍚 Ostgratinerad kassler, serveras med ris."
       },
       "torsdag": {
         "raw": [
-          "I Isterband samt bratwurst, serveras med gratinerad blomkål och kokt potatis."
+          "I Kyckling med wokade nudlar och grönsaker."
         ],
-        "formatted": "🥔 I Isterband samt bratwurst, serveras med gratinerad blomkål och kokt potatis."
+        "formatted": "🍗 I Kyckling med wokade nudlar och grönsaker."
       },
       "fredag": {
         "raw": [
-          "Högrevschili, serveras med ris, gräddfil och nachos"
+          "Tacogratäng, serveras med ris och grönsaker"
         ],
-        "formatted": "🍚 Högrevschili, serveras med ris, gräddfil och nachos"
+        "formatted": "🍚 Tacogratäng, serveras med ris och grönsaker"
       }
     },
-    "formatted_today": "🥩 I Köttbullar med gräddsås, potatismos och lingonsylt.",
-    "formatted": "🥩 I Köttbullar med gräddsås, potatismos och lingonsylt."
+    "formatted_today": "🍗 I Kyckling med wokade nudlar och grönsaker.",
+    "formatted": "🍗 I Kyckling med wokade nudlar och grönsaker."
   }
 }
