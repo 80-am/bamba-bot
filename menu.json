@@ -3,79 +3,73 @@
     "week": {
       "måndag": {
         "raw": [
-          "Köttbullar/gräddsås/lingon/gurka",
-          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+          "Pasta salsiccia/ostronskivling/tryffel/spenat",
+          "Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
         ],
-        "formatted": "🥩 Köttbullar/gräddsås/lingon/gurka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+        "formatted": "🍝 Pasta salsiccia/ostronskivling/tryffel/spenat\n🥩 Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
       },
       "tisdag": {
         "raw": [
-          "Lax/hummerhollandaise/morot/palsternacka",
-          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+          "Fiskgryta/saffran/rotfrukter/gräslöksaioli",
+          "Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
         ],
-        "formatted": "🐟 Lax/hummerhollandaise/morot/palsternacka\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+        "formatted": "🐟 Fiskgryta/saffran/rotfrukter/gräslöksaioli\n🥩 Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
       },
       "onsdag": {
         "raw": [
-          "Kycklingschnitzel/äpple/kapris/rädisa",
-          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+          "Kyckling karaage/jordnöt/gurka/koriander",
+          "Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
         ],
-        "formatted": "🍗 Kycklingschnitzel/äpple/kapris/rädisa\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+        "formatted": "🍗 Kyckling karaage/jordnöt/gurka/koriander\n🥩 Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
       },
       "torsdag": {
         "raw": [
-          "Hjortskav/rotfrukter/svartkål/lingon",
-          "Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+          "Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
         ],
-        "formatted": "🍽️ Hjortskav/rotfrukter/svartkål/lingon\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+        "formatted": "🥩 Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
       },
       "fredag": {
         "raw": [
-          "Pannbiff/rösti/chili gräddsås/tomat",
+          "Fläsksida/sichuanpeppar/pak choi/sesam",
           "Dagens veg",
-          "Vegansk kålpudding/löksky/lingon/gurka"
+          "Morot&kikärtsbiff/paprika/rödlök/mandel"
         ],
-        "formatted": "🥩 Pannbiff/rösti/chili gräddsås/tomat\n🥦 Dagens veg\n🥦 Vegansk kålpudding/löksky/lingon/gurka"
+        "formatted": "🥩 Fläsksida/sichuanpeppar/pak choi/sesam\n🥦 Dagens veg\n🥩 Morot&kikärtsbiff/paprika/rödlök/mandel"
       }
     },
-    "formatted_today": "🍽️ Hjortskav/rotfrukter/svartkål/lingon\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka",
-    "formatted": "🍽️ Hjortskav/rotfrukter/svartkål/lingon\n🥦 Vegetarisk: Vegansk kålpudding/löksky/lingon/gurka"
+    "formatted_today": "🍝 Pasta salsiccia/ostronskivling/tryffel/spenat\n🥩 Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel",
+    "formatted": "🍝 Pasta salsiccia/ostronskivling/tryffel/spenat\n🥩 Vegetarisk: Morot&kikärtsbiff/paprika/rödlök/mandel"
   },
   "ICA Supermarket Hansa": {
-    "week_raw_text": "| a — = NSD v.42 4 kh TT sn \"4 UY ANVVECKANS LUNCH: MÅNDAG I Panerad fisk med kokt potatis, stuvad spenat och ärtor. TISDAG - Kyckling i en örtig tomatsås med rostad potatis. I ONSDAG Ostgratinerad kassler, serveras med ris. TORSDAG I Kyckling med wokade nudlar och grönsaker. FREDAG Tacogratäng, serveras med ris och grönsaker. I NE h : j 15,90:-/hq ' | Med reservation för ändringar.",
+    "week_raw_text": "| a — å a v.50 UY ANNVVECKANS LUNCH: MÅNDAG I Pannbiff(nötkött) med potatismos, svampsås och lingonsylt. TISDAG Å Pocherad fisk i äggsås med kokt potatis. I ONSDAG Kyckling i en dijon-& dragonsås, serveras med ris. TORSDAG I Salsicciapasta med paprikasås och sparris. Vegetarisk tortellini. FREDAG Grillbuffé med rostad potatis och grönsaker. I NE ) MES 15,90:-/hq ' | Med reservation för ändringar. 4",
     "week": {
       "måndag": {
         "raw": [
-          "I Panerad fisk med kokt potatis, stuvad spenat och ärtor."
+          "I Pannbiff(nötkött) med potatismos, svampsås och lingonsylt."
         ],
-        "formatted": "🐟 I Panerad fisk med kokt potatis, stuvad spenat och ärtor."
+        "formatted": "🥩 I Pannbiff(nötkött) med potatismos, svampsås och lingonsylt."
       },
       "tisdag": {
         "raw": [
-          "Kyckling i en örtig tomatsås med rostad potatis"
+          "Å Pocherad fisk i äggsås med kokt potatis"
         ],
-        "formatted": "🍗 Kyckling i en örtig tomatsås med rostad potatis"
+        "formatted": "🐟 Å Pocherad fisk i äggsås med kokt potatis"
       },
       "onsdag": {
         "raw": [
-          "Ostgratinerad kassler, serveras med ris."
+          "Kyckling i en dijon-& dragonsås, serveras med ris."
         ],
-        "formatted": "🍚 Ostgratinerad kassler, serveras med ris."
+        "formatted": "🍗 Kyckling i en dijon-& dragonsås, serveras med ris."
       },
       "torsdag": {
         "raw": [
-          "I Kyckling med wokade nudlar och grönsaker."
+          "I Salsicciapasta med paprikasås och sparris",
+          "Vegetarisk tortellini."
         ],
-        "formatted": "🍗 I Kyckling med wokade nudlar och grönsaker."
-      },
-      "fredag": {
-        "raw": [
-          "Tacogratäng, serveras med ris och grönsaker"
-        ],
-        "formatted": "🍚 Tacogratäng, serveras med ris och grönsaker"
+        "formatted": "🍝 I Salsicciapasta med paprikasås och sparris\n🍝 Vegetarisk tortellini."
       }
     },
-    "formatted_today": "🍗 I Kyckling med wokade nudlar och grönsaker.",
-    "formatted": "🍗 I Kyckling med wokade nudlar och grönsaker."
+    "formatted_today": "🥩 I Pannbiff(nötkött) med potatismos, svampsås och lingonsylt.",
+    "formatted": "🥩 I Pannbiff(nötkött) med potatismos, svampsås och lingonsylt."
   }
 }
