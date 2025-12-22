@@ -6,21 +6,21 @@
           "Kycklingfrikadeller/spenat/äpple/dijon",
           "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
         ],
-        "formatted": "🍗 Kycklingfrikadeller/spenat/äpple/dijon\n🥦 Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
+        "formatted": ":pepe-christmas: Jullov"
       },
       "tisdag": {
         "raw": [
           "Spätta/skagensås/picklad lök/fänkål",
           "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
         ],
-        "formatted": "🍽️ Spätta/skagensås/picklad lök/fänkål\n🥦 Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
+        "formatted": ":pepe-christmas: Jullov"
       },
       "onsdag": {
         "raw": [
           "Stekt fläsk/raggmunk/lingon/purjo",
           "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
         ],
-        "formatted": "🥩 Stekt fläsk/raggmunk/lingon/purjo\n🥦 Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
+        "formatted": ":pepe-christmas: Jullov"
       },
       "torsdag": {
         "raw": [
@@ -28,18 +28,18 @@
           "Pasta bolognese/gremolata/parmesan",
           "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
         ],
-        "formatted": "🍝 Pasta bolognaises/gremolata/parmesan\n🍝 Pasta bolognese/gremolata/parmesan\n🥦 Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
+        "formatted": ":pepe-christmas: Jullov"
       },
       "fredag": {
         "raw": [
           "Dagens veg",
           "Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
         ],
-        "formatted": "🥦 Dagens veg\n🍽️ Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
+        "formatted": ":pepe-christmas: Jullov"
       }
     },
-    "formatted_today": "🍗 Kycklingfrikadeller/spenat/äpple/dijon\n🥦 Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd",
-    "formatted": "🍗 Kycklingfrikadeller/spenat/äpple/dijon\n🥦 Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
+    "formatted_today": ":pepe-christmas: Jullov",
+    "formatted": ":pepe-christmas: Jullov"
   },
   "ICA Supermarket Hansa": {
     "week_raw_text": "a lg a År at — = i ; v.51 ( ANYVVECKANS LUNCH: MÅNDAG I Kåldolmar med kokt potatis, gräddsås och lingonsylt. TISDAG va Fiskgratäng med potatismos. I ONSDAG Currykyckling med ris. TORSDAG I Makaronipudding på kalkon med grönsaker. FREDAG Kebab och falafel. Serveras med ris och klassiska tillbehör. I h : / 15,90:-/h9 4£ ' | Med reservation för ändringar. 1",
@@ -48,35 +48,35 @@
         "raw": [
           "I Kåldolmar med kokt potatis, gräddsås och lingonsylt."
         ],
-        "formatted": "🥔 I Kåldolmar med kokt potatis, gräddsås och lingonsylt."
+        "formatted": ":pepe-christmas: Jullov"
       },
       "tisdag": {
         "raw": [
           "va Fiskgratäng med potatismos"
         ],
-        "formatted": "🐟 va Fiskgratäng med potatismos"
+        "formatted": ":pepe-christmas: Jullov"
       },
       "onsdag": {
         "raw": [
           "Currykyckling med ris."
         ],
-        "formatted": "🍗 Currykyckling med ris."
+        "formatted": ":pepe-christmas: Jullov"
       },
       "torsdag": {
         "raw": [
           "I Makaronipudding på kalkon med grönsaker."
         ],
-        "formatted": "🍽️ I Makaronipudding på kalkon med grönsaker."
+        "formatted": ":pepe-christmas: Jullov"
       },
       "fredag": {
         "raw": [
           "Kebab och falafel",
           "Serveras med ris och klassiska tillbehör"
         ],
-        "formatted": "🥙 Kebab och falafel\n🍚 Serveras med ris och klassiska tillbehör"
+        "formatted": ":pepe-christmas: Jullov"
       }
     },
-    "formatted_today": "🥔 I Kåldolmar med kokt potatis, gräddsås och lingonsylt.",
-    "formatted": "🥔 I Kåldolmar med kokt potatis, gräddsås och lingonsylt."
+    "formatted_today": ":pepe-christmas: Jullov",
+    "formatted": ":pepe-christmas: Jullov"
   }
 }
