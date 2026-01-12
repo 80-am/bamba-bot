@@ -1,82 +1,42 @@
 {
-  "La Gare Malmö": {
-    "week": {
-      "måndag": {
-        "raw": [
-          "Kycklingfrikadeller/spenat/äpple/dijon",
-          "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
-        ],
-        "formatted": ":pepe-christmas: Jullov"
-      },
-      "tisdag": {
-        "raw": [
-          "Spätta/skagensås/picklad lök/fänkål",
-          "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
-        ],
-        "formatted": ":pepe-christmas: Jullov"
-      },
-      "onsdag": {
-        "raw": [
-          "Stekt fläsk/raggmunk/lingon/purjo",
-          "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
-        ],
-        "formatted": ":pepe-christmas: Jullov"
-      },
-      "torsdag": {
-        "raw": [
-          "Pasta bolognaises/gremolata/parmesan",
-          "Pasta bolognese/gremolata/parmesan",
-          "Vegetarisk: Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
-        ],
-        "formatted": ":pepe-christmas: Jullov"
-      },
-      "fredag": {
-        "raw": [
-          "Dagens veg",
-          "Konfiterad tomat/burrata/balsamico/solros/surdegsbröd"
-        ],
-        "formatted": ":pepe-christmas: Jullov"
-      }
-    },
-    "formatted_today": ":pepe-christmas: Jullov",
-    "formatted": ":pepe-christmas: Jullov"
-  },
   "ICA Supermarket Hansa": {
-    "week_raw_text": "a lg a År at — = i ; v.51 ( ANYVVECKANS LUNCH: MÅNDAG I Kåldolmar med kokt potatis, gräddsås och lingonsylt. TISDAG va Fiskgratäng med potatismos. I ONSDAG Currykyckling med ris. TORSDAG I Makaronipudding på kalkon med grönsaker. FREDAG Kebab och falafel. Serveras med ris och klassiska tillbehör. I h : / 15,90:-/h9 4£ ' | Med reservation för ändringar. 1",
+    "week_raw_text": "Va I , Å s VECKANS LUNCH: MÅNDAG I Panerad fisk med kokt potatis, ärtor, spenat och remouladsås. TISDAG | Köttbullar i tomatsås med mozzarella. Serveras med ris. I ONSDAG Gratinerad falukorv med potatismos. TORSDAG | Raggmunk med stekt fläsk och lingonsylt. FREDAG Pulled pork samt black garlickyckling. Serveras med ris. I ) ) (NE 15,90:-/h9 8 / : Med reservation för ändringar. v IM — Ä]]!",
     "week": {
       "måndag": {
         "raw": [
-          "I Kåldolmar med kokt potatis, gräddsås och lingonsylt."
+          "I Panerad fisk med kokt potatis, ärtor, spenat och remouladsås."
         ],
-        "formatted": ":pepe-christmas: Jullov"
+        "formatted": "🐟 I Panerad fisk med kokt potatis, ärtor, spenat och remouladsås."
       },
       "tisdag": {
         "raw": [
-          "va Fiskgratäng med potatismos"
+          "Köttbullar i tomatsås med mozzarella",
+          "Serveras med ris"
         ],
-        "formatted": ":pepe-christmas: Jullov"
+        "formatted": "🥩 Köttbullar i tomatsås med mozzarella\n🍚 Serveras med ris"
       },
       "onsdag": {
         "raw": [
-          "Currykyckling med ris."
+          "Gratinerad falukorv med potatismos."
         ],
-        "formatted": ":pepe-christmas: Jullov"
+        "formatted": "🥔 Gratinerad falukorv med potatismos."
       },
       "torsdag": {
         "raw": [
-          "I Makaronipudding på kalkon med grönsaker."
+          "Raggmunk med stekt fläsk och lingonsylt."
         ],
-        "formatted": ":pepe-christmas: Jullov"
+        "formatted": "🥩 Raggmunk med stekt fläsk och lingonsylt."
       },
       "fredag": {
         "raw": [
-          "Kebab och falafel",
-          "Serveras med ris och klassiska tillbehör"
+          "Pulled pork samt black garlickyckling",
+          "Serveras med ris",
+          "v IM — Ä]]!"
         ],
-        "formatted": ":pepe-christmas: Jullov"
+        "formatted": "🍗 Pulled pork samt black garlickyckling\n🍚 Serveras med ris\n🍽️ v IM — Ä]]!"
       }
     },
-    "formatted_today": ":pepe-christmas: Jullov",
-    "formatted": ":pepe-christmas: Jullov"
+    "formatted_today": "🐟 I Panerad fisk med kokt potatis, ärtor, spenat och remouladsås.",
+    "formatted": "🐟 I Panerad fisk med kokt potatis, ärtor, spenat och remouladsås."
   }
 }
