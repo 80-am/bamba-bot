@@ -1,33 +1,33 @@
 {
   "ICA Supermarket Hansa": {
-    "week_raw_text": "a la a fl el rn rn 7? RE - = | UY ANVVECKANS LUNCH: MÅNDAG | Pannbiff (nötkött) med kokt potatis, stekt lök och gräddås. TISDAG = Fisk i en vitvinssås, serveras med potatismos. I ONSDAG 'Gochujangkyckling, serveras med ris och grönsaker. TORSDAG I Mac n'cheese med chorizo samt kyckling och fläskfilé FREDAG Boeuf bourguignon, serveras med potatismos. I NEN h NES 15,90:-/hq i | Med reservation för ändringar.",
+    "week_raw_text": "ra nr 7? SÅ v.5 47 I A RE = | UJ ANYVVECKANS LUNCH: MÅNDAG | Kycklingschnitzel med potatisgratäng, rödvinssås och bea. TISDAG v Oklassisk fiskgratäng med potatismos. I ONSDAG Ostgratinerad kassler med krämig chilisås, serveras med ris. TORSDAG I Currykyckling med vegetariska vårrullar, grönsaker och ris. FREDAG Kyckling samt fläskfilé med rostad potatis och grönsaker. I NEN h MES 15,90:-/hq ; ” || Med reservation för ändringar.",
     "week": {
       "måndag": {
         "raw": [
-          "Pannbiff (nötkött) med kokt potatis, stekt lök och gräddås."
+          "Kycklingschnitzel med potatisgratäng, rödvinssås och bea."
         ],
-        "formatted": "🥩 Pannbiff (nötkött) med kokt potatis, stekt lök och gräddås."
+        "formatted": "🍗 Kycklingschnitzel med potatisgratäng, rödvinssås och bea."
       },
       "tisdag": {
         "raw": [
-          "= Fisk i en vitvinssås, serveras med potatismos"
+          "v Oklassisk fiskgratäng med potatismos"
         ],
-        "formatted": "🐟 = Fisk i en vitvinssås, serveras med potatismos"
+        "formatted": "🐟 v Oklassisk fiskgratäng med potatismos"
       },
       "onsdag": {
         "raw": [
-          "'Gochujangkyckling, serveras med ris och grönsaker."
+          "Ostgratinerad kassler med krämig chilisås, serveras med ris."
         ],
-        "formatted": "🍗 'Gochujangkyckling, serveras med ris och grönsaker."
+        "formatted": "🍚 Ostgratinerad kassler med krämig chilisås, serveras med ris."
       },
-      "fredag": {
+      "torsdag": {
         "raw": [
-          "Boeuf bourguignon, serveras med potatismos"
+          "I Currykyckling med vegetariska vårrullar, grönsaker och ris."
         ],
-        "formatted": "🥔 Boeuf bourguignon, serveras med potatismos"
+        "formatted": "🍗 I Currykyckling med vegetariska vårrullar, grönsaker och ris."
       }
     },
-    "formatted_today": "🐟 = Fisk i en vitvinssås, serveras med potatismos",
-    "formatted": "🐟 = Fisk i en vitvinssås, serveras med potatismos"
+    "formatted_today": "🍗 Kycklingschnitzel med potatisgratäng, rödvinssås och bea.",
+    "formatted": "🍗 Kycklingschnitzel med potatisgratäng, rödvinssås och bea."
   }
 }
