@@ -1,33 +1,34 @@
 {
   "ICA Supermarket Hansa": {
-    "week_raw_text": "ra nr 7? SÅ v.5 47 I A RE = | UJ ANYVVECKANS LUNCH: MÅNDAG | Kycklingschnitzel med potatisgratäng, rödvinssås och bea. TISDAG v Oklassisk fiskgratäng med potatismos. I ONSDAG Ostgratinerad kassler med krämig chilisås, serveras med ris. TORSDAG I Currykyckling med vegetariska vårrullar, grönsaker och ris. FREDAG Kyckling samt fläskfilé med rostad potatis och grönsaker. I NEN h MES 15,90:-/hq ; ” || Med reservation för ändringar.",
+    "week_raw_text": "v.6 TT [3 ANN VECKANS LUNCH: Kd . MÅNDAG | Kåldolmar med potatismos, gräddsås och lingonsylt. TISDAG - Fiskgryta, serveras med kokt potatis och en persiljekräm. I ONSDAG Kreolsk gryta med ris. TORSDAG I Kallrökt laxpasta, alt. vegetarisk tortellini. FREDAG Nattbakad karré med rostad potatis och grönsaker. I N ÅN ) sl : S 15,90:-/hg ; ” || Med reservation för ändringar.",
     "week": {
       "måndag": {
         "raw": [
-          "Kycklingschnitzel med potatisgratäng, rödvinssås och bea."
+          "Kåldolmar med potatismos, gräddsås och lingonsylt."
         ],
-        "formatted": "🍗 Kycklingschnitzel med potatisgratäng, rödvinssås och bea."
+        "formatted": "🥔 Kåldolmar med potatismos, gräddsås och lingonsylt."
       },
       "tisdag": {
         "raw": [
-          "v Oklassisk fiskgratäng med potatismos"
+          "Fiskgryta, serveras med kokt potatis och en persiljekräm"
         ],
-        "formatted": "🐟 v Oklassisk fiskgratäng med potatismos"
+        "formatted": "🐟 Fiskgryta, serveras med kokt potatis och en persiljekräm"
       },
       "onsdag": {
         "raw": [
-          "Ostgratinerad kassler med krämig chilisås, serveras med ris."
+          "Kreolsk gryta med ris."
         ],
-        "formatted": "🍚 Ostgratinerad kassler med krämig chilisås, serveras med ris."
+        "formatted": "🍚 Kreolsk gryta med ris."
       },
       "torsdag": {
         "raw": [
-          "I Currykyckling med vegetariska vårrullar, grönsaker och ris."
+          "I Kallrökt laxpasta, alt",
+          "vegetarisk tortellini."
         ],
-        "formatted": "🍗 I Currykyckling med vegetariska vårrullar, grönsaker och ris."
+        "formatted": "🐟 I Kallrökt laxpasta, alt\n🍝 vegetarisk tortellini."
       }
     },
-    "formatted_today": "🍗 Kycklingschnitzel med potatisgratäng, rödvinssås och bea.",
-    "formatted": "🍗 Kycklingschnitzel med potatisgratäng, rödvinssås och bea."
+    "formatted_today": "🐟 Fiskgryta, serveras med kokt potatis och en persiljekräm",
+    "formatted": "🐟 Fiskgryta, serveras med kokt potatis och en persiljekräm"
   }
 }
