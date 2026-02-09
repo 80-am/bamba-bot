@@ -1,34 +1,35 @@
 {
   "ICA Supermarket Hansa": {
-    "week_raw_text": "v.6 TT [3 ANN VECKANS LUNCH: Kd . MÅNDAG | Kåldolmar med potatismos, gräddsås och lingonsylt. TISDAG - Fiskgryta, serveras med kokt potatis och en persiljekräm. I ONSDAG Kreolsk gryta med ris. TORSDAG I Kallrökt laxpasta, alt. vegetarisk tortellini. FREDAG Nattbakad karré med rostad potatis och grönsaker. I N ÅN ) sl : S 15,90:-/hg ; ” || Med reservation för ändringar.",
+    "week_raw_text": "ÅT a 7? 47 I bä Vv i I lä q I = | UJ ANYVVECKANS LUNCH: MÅNDAG | Panerad fisk med kokt potatis, ärtor och remouladsås. TISDAG 3 Flygande Jakob med ris. I ONSDAG Pannbiff i tomatsås med fetaost. serveras med ris. TORSDAG I Ärtsoppa och pannkakor med sylt och grädde. Chorizo och rotfruktsgratäng. FREDAG > Grillbuffé med potatis och grönsaker. NEN h MES 15,90:-/hq ; ” || Med reservation för ändringar.",
     "week": {
       "måndag": {
         "raw": [
-          "Kåldolmar med potatismos, gräddsås och lingonsylt."
+          "Panerad fisk med kokt potatis, ärtor och remouladsås."
         ],
-        "formatted": "🥔 Kåldolmar med potatismos, gräddsås och lingonsylt."
+        "formatted": "🐟 Panerad fisk med kokt potatis, ärtor och remouladsås."
       },
       "tisdag": {
         "raw": [
-          "Fiskgryta, serveras med kokt potatis och en persiljekräm"
+          "3 Flygande Jakob med ris"
         ],
-        "formatted": "🐟 Fiskgryta, serveras med kokt potatis och en persiljekräm"
+        "formatted": "🍚 Flygande Jakob med ris"
       },
       "onsdag": {
         "raw": [
-          "Kreolsk gryta med ris."
+          "Pannbiff i tomatsås med fetaost",
+          "serveras med ris."
         ],
-        "formatted": "🍚 Kreolsk gryta med ris."
+        "formatted": "🥩 Pannbiff i tomatsås med fetaost\n🍚 serveras med ris."
       },
       "torsdag": {
         "raw": [
-          "I Kallrökt laxpasta, alt",
-          "vegetarisk tortellini."
+          "Ärtsoppa och pannkakor med sylt och grädde",
+          "Chorizo och rotfruktsgratäng."
         ],
-        "formatted": "🐟 I Kallrökt laxpasta, alt\n🍝 vegetarisk tortellini."
+        "formatted": "🥣 Ärtsoppa och pannkakor med sylt och grädde\n🍽️ Chorizo och rotfruktsgratäng."
       }
     },
-    "formatted_today": "🐟 Fiskgryta, serveras med kokt potatis och en persiljekräm",
-    "formatted": "🐟 Fiskgryta, serveras med kokt potatis och en persiljekräm"
+    "formatted_today": "🐟 Panerad fisk med kokt potatis, ärtor och remouladsås.",
+    "formatted": "🐟 Panerad fisk med kokt potatis, ärtor och remouladsås."
   }
 }
