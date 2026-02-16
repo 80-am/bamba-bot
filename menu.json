@@ -1,35 +1,33 @@
 {
   "ICA Supermarket Hansa": {
-    "week_raw_text": "ÅT a 7? 47 I bä Vv i I lä q I = | UJ ANYVVECKANS LUNCH: MÅNDAG | Panerad fisk med kokt potatis, ärtor och remouladsås. TISDAG 3 Flygande Jakob med ris. I ONSDAG Pannbiff i tomatsås med fetaost. serveras med ris. TORSDAG I Ärtsoppa och pannkakor med sylt och grädde. Chorizo och rotfruktsgratäng. FREDAG > Grillbuffé med potatis och grönsaker. NEN h MES 15,90:-/hq ; ” || Med reservation för ändringar.",
+    "week_raw_text": "ÅT a 7? 4, DV Du v.g I lä q I = | UJ ANYVVECKANS LUNCH: MÅNDAG | Köttbullar med potatismos, gräddsås och lingonsylt. TISDAG , Pocherad fisk i en hummersås med kokt potatis. I ONSDAG Asiatisk kyckling med nudelwok och grönsaker. TORSDAG I Fläskfilégryta med ris eller rostad potatis. FREDAG Chili con carne med ris, nachos samt grönsaker. I NEN h MES 15,90:-/hq ; ” || Med reservation för ändringar.",
     "week": {
       "måndag": {
         "raw": [
-          "Panerad fisk med kokt potatis, ärtor och remouladsås."
+          "Köttbullar med potatismos, gräddsås och lingonsylt."
         ],
-        "formatted": "🐟 Panerad fisk med kokt potatis, ärtor och remouladsås."
+        "formatted": "🥩 Köttbullar med potatismos, gräddsås och lingonsylt."
       },
       "tisdag": {
         "raw": [
-          "3 Flygande Jakob med ris"
+          ", Pocherad fisk i en hummersås med kokt potatis"
         ],
-        "formatted": "🍚 Flygande Jakob med ris"
+        "formatted": "🐟 Pocherad fisk i en hummersås med kokt potatis"
       },
       "onsdag": {
         "raw": [
-          "Pannbiff i tomatsås med fetaost",
-          "serveras med ris."
+          "Asiatisk kyckling med nudelwok och grönsaker."
         ],
-        "formatted": "🥩 Pannbiff i tomatsås med fetaost\n🍚 serveras med ris."
+        "formatted": "🍗 Asiatisk kyckling med nudelwok och grönsaker."
       },
-      "torsdag": {
+      "fredag": {
         "raw": [
-          "Ärtsoppa och pannkakor med sylt och grädde",
-          "Chorizo och rotfruktsgratäng."
+          "Chili con carne med ris, nachos samt grönsaker"
         ],
-        "formatted": "🥣 Ärtsoppa och pannkakor med sylt och grädde\n🍽️ Chorizo och rotfruktsgratäng."
+        "formatted": "🍚 Chili con carne med ris, nachos samt grönsaker"
       }
     },
-    "formatted_today": "🐟 Panerad fisk med kokt potatis, ärtor och remouladsås.",
-    "formatted": "🐟 Panerad fisk med kokt potatis, ärtor och remouladsås."
+    "formatted_today": "🥩 Köttbullar med potatismos, gräddsås och lingonsylt.",
+    "formatted": "🥩 Köttbullar med potatismos, gräddsås och lingonsylt."
   }
 }
